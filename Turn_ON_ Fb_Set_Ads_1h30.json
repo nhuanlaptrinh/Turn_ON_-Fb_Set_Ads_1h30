@@ -7,7 +7,7 @@
           "interval": [
             {
               "field": "hours",
-              "triggerAtMinute": 45
+              "triggerAtMinute": 30
             }
           ]
         }
@@ -15,8 +15,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        48,
-        368
+        32,
+        -144
       ],
       "id": "f78a86f0-a978-4d8d-8390-1d41d65325c8",
       "name": "Schedule Trigger"
@@ -28,13 +28,13 @@
             {
               "id": "3acae58a-6d3c-4db5-a1aa-edf9cd88181b",
               "name": "access_token",
-              "value": "EAATostwKkxMBQCfStbhkx6Jgdi0DrXO8FZCB32JHhAizaN0O7pZAEZCay2BoMZAYCUZBiqJeoCAj5LScxx2cL1duf8ZCQRT5HIyBnPTCDGpFPiaDABMABgCuaF2eG71rCMSZCskRpF1N60ZCDOWmZCBZAUbeTbeAVlJM1tLj75M4dAlMUia3PmbrrkeeH52R9sXmMMH0VJjBEq2fUz4LIinIYA",
+              "value": "",
               "type": "string"
             },
             {
               "id": "1dda0de4-888e-4d16-9892-0491110769e8",
               "name": "Nguong_CPA",
-              "value": 10000,
+              "value": 14000,
               "type": "number"
             },
             {
@@ -74,8 +74,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        272,
-        368
+        256,
+        -144
       ],
       "id": "ecce0258-0533-4df7-ac90-a96f64bf931c",
       "name": "Thông Số Đầu Vào"
@@ -109,8 +109,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        496,
-        368
+        480,
+        -144
       ],
       "id": "be786da8-7eb4-481c-adc5-7b8dcf01e512",
       "name": "Quy Đổi Theo Tỷ Suất"
@@ -142,8 +142,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        720,
-        368
+        704,
+        -144
       ],
       "notesInFlow": true,
       "notes": "Lấy tất cả campaigns"
@@ -156,8 +156,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        944,
-        368
+        928,
+        -144
       ],
       "id": "11cd1b09-ed3b-45f0-acac-34d7737ed50c",
       "name": "Split Out Campaigns"
@@ -189,8 +189,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1168,
-        352
+        1152,
+        -144
       ],
       "id": "c1c42d80-5cf2-45be-87c6-e7bb980ee0e4",
       "name": "Lọc Campaigns Active"
@@ -226,8 +226,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1392,
-        368
+        1376,
+        -144
       ],
       "notesInFlow": true,
       "notes": "Lấy adsets từ campaigns active"
@@ -240,8 +240,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1616,
-        368
+        1600,
+        -144
       ],
       "id": "3d5b9012-7080-46e6-afb3-0b152a4b7569",
       "name": "Split Out Adsets"
@@ -273,8 +273,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2064,
-        224
+        2048,
+        -336
       ],
       "id": "b096b790-75b1-426e-9c02-6bcf7eb6a6b3",
       "name": "Lọc Adsets PAUSED"
@@ -286,8 +286,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2304,
-        208
+        2496,
+        -336
       ],
       "id": "eab83f9d-1908-4c79-b2ce-c79113fb09f4",
       "name": "Tính CPA"
@@ -319,8 +319,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2528,
-        320
+        2720,
+        -336
       ],
       "id": "2ae9ed51-42c9-4d7e-b3de-f14e427bc002",
       "name": "Kiểm tra CPA <= Ngưỡng"
@@ -378,8 +378,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2736,
-        304
+        2944,
+        -336
       ],
       "id": "f3d04e8f-afaf-49e7-ace6-39ee495febcc",
       "name": "Chuẩn bị dữ liệu"
@@ -408,21 +408,21 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2960,
-        368
+        3168,
+        -256
       ]
     },
     {
       "parameters": {
-        "content": "## Các nhóm mà AI đã tắt nếu 1h hoặc 2h sau mà chi phí/khách < Nguong_CPA thì bật lại (chỉ với campaign đang ACTIVE)",
-        "height": 800,
+        "content": "## Các nhóm mà AI đã tắt nếu 1h hoặc 2h sau mà chi phí/khách < Nguong_CPA thì bật lại (chỉ với campaign đang ACTIVE)\nAnh Lập Trình - N8n",
+        "height": 688,
         "width": 3312
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        0
+        16,
+        -592
       ],
       "id": "2e1178ec-96e0-4095-b31d-688ec70f36bc",
       "name": "Sticky Note"
@@ -434,11 +434,53 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1840,
-        368
+        1824,
+        -144
       ],
       "id": "49df03fa-7c9e-416f-a360-efd72e61edbf",
       "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "bcbf93e1-2169-4b60-a2b3-158deb000f7c",
+              "leftValue": "={{ parseFloat($('Split Out Adsets').item.json.insights.data[0].spend) }}",
+              "rightValue": "={{ $('Quy Đổi Theo Tỷ Suất').item.json.Nguong_Duoi }}",
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "b075226f-11f1-4d28-b037-9826597195b5",
+              "leftValue": "={{ parseFloat($('Split Out Adsets').item.json.insights.data[0].spend) }}",
+              "rightValue": "={{ $('Quy Đổi Theo Tỷ Suất').item.json.Nguong_Tren }}",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2272,
+        -336
+      ],
+      "id": "e933767e-52fd-43b1-8789-4f46091b2ae2",
+      "name": "Lọc nhóm trong ngưỡng theo chi tiêu"
     }
   ],
   "pinData": {},
@@ -547,7 +589,14 @@
       "main": [
         [
           {
-            "node": "Tính CPA",
+            "node": "Lọc nhóm trong ngưỡng theo chi tiêu",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -604,13 +653,31 @@
           }
         ]
       ]
+    },
+    "Lọc nhóm trong ngưỡng theo chi tiêu": {
+      "main": [
+        [
+          {
+            "node": "Tính CPA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "59285888-1057-49a4-a1eb-3f95b40051cb",
+  "versionId": "e137ada1-57f1-4ea9-a80b-27ea1bada5d4",
   "meta": {
     "instanceId": "8ae9064574590f4bef62fe6c8cafaae52a5a90dd40cb184103af1049753a2d5d"
   },
